@@ -1,0 +1,48 @@
+{
+  "name": "react-movies-js",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "jest-junit": "^12.0.0",
+    "json-server": "^0.17.0",
+    "moment": "^2.29.1",
+    "react": "^17.0.1",
+    "react-datepicker": "^4.7.0",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^6.2.2",
+    "react-scripts": "^4.0.0",
+    "react-spinners": "^0.11.0",
+    "styled-components": "^5.3.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "api": "json-server --watch src/api/db.json --port 3001",
+    "test": "react-scripts test --coverage --reporters='jest-junit' --coverageDirectory='results/' --watchAll=false"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@stryker-mutator/core": "^4.1.2",
+    "@stryker-mutator/jest-runner": "^4.1.2"
+  }
+}

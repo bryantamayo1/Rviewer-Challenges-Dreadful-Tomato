@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+:root{
+    --height-containerInfoOneMovie: 240px;
+    --color-red-active: #CA1818;
+}
+
+body{
+    font-family: 'Fredoka', sans-serif;
+    background-color: black;
+}
+
+.containerInfoOneMovie{
+    height: var(--height-containerInfoOneMovie);
+    left: 0;
+    position: absolute;
+    right: 0; 
+    transition: 0.7s;
+    top: calc(var(--height-containerInfoOneMovie) - 40px);    /* height  ContainerOneMovie - itemTitle */
+}
+.containerInfoOneMovie, .containerInfoOneMovie > p{
+    background: rgba(52, 52 ,52, 0.7);
+}
+.containerInfoOneMovie > p{
+    letter-spacing: 1px;
+    margin : 0;
+    padding: 0px 10px;
+}
+.containerOneMovie:hover > .containerInfoOneMovie{
+    top: 0px;
+}
+.itemTitle{
+    align-items: center;
+    display: flex;
+    font-size: 11px;
+    font-weight: bold;
+    height: 40px;
+}
+.itemReleaseYear{
+    background: transparent;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0px 0px 0px 5px;
+}
+.itemDescription{
+    height: 100%;
+    font-size: 9px;
+    padding-top: 8px !important;
+}
+
+/* DatePicker */
+.react-datepicker__year-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.react-datepicker__year .react-datepicker__year-text{
+    width: 3rem;
+}
+.react-datepicker__year-text--selected, .react-datepicker__year-text--selected:hover{
+    background-color: var(--color-red-active);
+    border-radius: 0px;
+}
+.react-datepicker__year-text.react-datepicker__year-text--keyboard-selected, .react-datepicker__year-text.react-datepicker__year-text--keyboard-selected:hover{
+    background-color: var(--color-red-active);
+    border-radius: 0px;
+}
+
+.react-datepicker__header{
+    background-color: var(--color-red-active);
+    border-bottom: 0pc;
+    color: white;
+    padding: 2px 0px;
+}
+.datepickerCss{
+    border: 0px;
+}
+.react-datepicker__navigation-icon.react-datepicker__navigation-icon--next::before{
+    border-color: white;
+}
+.react-datepicker__navigation-icon.react-datepicker__navigation-icon--previous::before{
+    border-color: white;
+}
+
+/* ContainerItems */
+.handleWidth{
+    padding: 0px 240px;
+}
+.containerMovies{
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+
+/* @media queryçies */
+@media (max-width: 1400px){
+    .handleWidth{
+        padding: 0px 150px;
+    }
+}
+@media(max-width: 1024px){
+    .myCustomNavLink{
+        padding: 10px 0px !important;
+    }
+}
+@media (max-width: 1200px){
+    .handleWidth{
+        padding: 0px 50px;
+    }
+}
+@media (max-width: 992px){
+    .handleWidth{
+        padding: 0px;
+    }
+}
+@media (max-width: 768px){
+    .containerMovies{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 500px){
+    .containerMovies{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .containerInfoOneMovie{
+        height: 340px;
+        top: calc(340px - 40px);    /* height  ContainerOneMovie - itemTitle */
+    }
+}
+@media (max-width: 450px){
+    .containerMovies{
+        grid-template-columns: 1fr;
+    }
+    .containerInfoOneMovie{
+        height: 500px;
+        top: calc(500px - 40px);    /* height  ContainerOneMovie - itemTitle */
+    }
+}
